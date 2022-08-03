@@ -16,12 +16,17 @@ library(deSolve)
 ### Specify parameters
 
 ## Proportion in each compartment: Susceptible 0.999999, Infected 0.000001, Recovered 0 (these are directly from the example linked above)
+#these are the initial proportions of people who are inefected or susceptible
 init <- c(S = 1-1e-6, I = 1e-6, R = 0.0)
 
 ## beta: infection parameter; gamma: recovery parameter
-parameters <- c(beta = 2.316, gamma = 0.261)
 
+# original parameters <- c(beta = 2.316, gamma = 0.261)
+parameters <- c(beta = 1.316, gamma = 2.261)
+#increase the infection parameter, people get infected faster 
+#increasing recovery parameter recovery happens faster
 ## Time frame
+#if you decrease the inection paramter enough then no one gets infected 
 times      <- seq(0, 100, by = 0.5)
 ```
 
@@ -64,5 +69,6 @@ approx_long <- approx_df %>%
 ggplot(data = approx_long, aes(x = time, y = proportion)) +
   geom_line(aes(color = population))
 ```
-
+Explore the code and output graph. What is the code doing? What is the graph telling us?
+the graph is telling us the proportion of people that are susceptible is high and the proportion of people who have recovered is low. As people become infected less people are susceptible and more people are recovered. 
 ## End
