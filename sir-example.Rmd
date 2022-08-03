@@ -26,7 +26,7 @@ parameters <- c(beta = 1.316, gamma = 2.261)
 #increase the infection parameter, people get infected faster 
 #increasing recovery parameter recovery happens faster
 ## Time frame
-#if you decrease the inection paramter enough then no one gets infected 
+#if you decrease the infection paramter enough then no one gets infected 
 times      <- seq(0, 100, by = 0.5)
 ```
 
